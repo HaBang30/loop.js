@@ -1,14 +1,8 @@
-function setInput(number) {
-    let input = document.getElementById('input').value += number;
-}
-function calculator() {
-    let input = document.getElementById ('input').value;
-        result = eval(input);
-        document.getElementById('input').value = result;
-    
-}
-function clearInput() {
-    let input = document.getElementById('input').value;
-    document.getElementById('input').value = "";
+function convert() {
+    let amount = document.getElementById ('amount').value;
+    let fromcurrency = document.getElementById('fromcurrency').value;
+    let tocurrency = document.getElementById('tocurrency').value;
+        result = amount * tocurrency / fromcurrency;
+        document.getElementById("result").innerHTML = result
     
 }
