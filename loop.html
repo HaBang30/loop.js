@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOP -JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1 style="text-align: center;">Design calculator</h1>
+    <table style="margin: auto;">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="input">
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="setInput(1)">1</button></td>
+            <td><button onclick="setInput(2)">2</button></td>
+            <td><button onclick="setInput(3)">3</button></td>
+            <td><button onclick="setInput('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="setInput(4)">4</button></td>
+            <td><button onclick="setInput(5)">5</button></td>
+            <td><button onclick="setInput(6)">6</button></td>
+            <td><button onclick="setInput('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="setInput(7)">7</button></td>
+            <td><button onclick="setInput(8)">8</button></td>
+            <td><button onclick="setInput(9)">9</button></td>
+            <td><button onclick="setInput('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="setInput(0)">0</button></td>
+            <td><button onclick="setInput('.')">.</button></td>
+            <td><button onclick="clearInput()">DL</button></td>
+            <td><button onclick="calculator()">=</button></td>
+        </tr>
+    </table>
+  
+</body>
+</html>
+<script src="loop.js"></script>
