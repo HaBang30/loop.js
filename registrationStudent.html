@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Students</title>
+    <style>
+        table {
+            margin: auto;
+            border: 1px solid rgb(252, 252, 177);
+            background: rgb(252, 252, 177);
+        }
+        tr > th {
+            width: 50%;
+            height: 10px;
+            background: greenyellow;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://www.google.com.vn/" method="post">
+        <table>
+            <tr>
+                <th colspan="2">ĐĂNG KÝ HỌC VIÊN</th>
+            </tr>
+            <tr>
+                <td>
+                    Họ và tên
+                </td>
+                <td>
+                    <input type="text" name="yourName" value="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ngày sinh
+                </td>
+                <td>
+                    <input type="text" name="yourBirthday" value="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Giới tính
+                </td>
+                <td>
+                    <input type="radio" name="gender" value="male" checked>Nam
+                    <input type="radio" name="gender" value="female">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Địa chỉ
+                </td>
+                <td>
+                    <textarea name="address" id="textarea" cols="22" rows="3"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Lớp
+                </td>
+                <td>
+                    <select name="class" id="class">
+                        <option value="choose" checked>-chọn lớp-</option>
+                        <option value="class">1</option>
+                        <option value="class">2</option>
+                        <option value="class">3</option>
+                        <option value="class">4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="text" name="yourEmail" value="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Điện thoại
+                </td>
+                <td>
+                    <input type="number" name="yourPhone" value="">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" name="btn" value="register">Đăng Ký</button>
+                    <button type="button" name="btn" value="reset">Nhập lại</button>
+                </td> 
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
