@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registration</title>
+    <style>
+        table {
+            margin: auto;
+        }
+        td{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        td > button {
+            color: red;
+            font-weight: bold;
+            border: 2px solid red;
+            background: pink;
+        }
+        button:hover {
+            background: yellow;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://www.google.com.vn/" method="post">
+        <table>
+            <tr>
+                <td>Họ và tên:</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="yourName" value=""></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="yourEmail" value=""></td>
+            </tr>
+            <tr>
+                <td>Số điện thoại:</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="yourPhone" value=""></td>
+            </tr>
+            <tr>
+                <td>Giới tính:</td>
+            </tr>
+            <tr>
+                <td>
+                <input type="radio" name="gender" value="Nam" checked>Nam
+                <input type="radio" name="gender" value="Nữ">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button" value="register">REGISTER</button></td>
+            </tr>
+        </table>
+        
+    </form>
+</body>
+</html>
