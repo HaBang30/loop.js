@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compound Interest</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Deposit: </td>
+            <td><input type="text" id="deposit"></td>
+        </tr>
+        <tr>
+            <td>Interest: </td>
+            <td><input type="text" id="interest"></td>
+        </tr>
+        <tr>
+            <td>Month: </td>
+            <td><input type="text" id="month"></td>
+        </tr>
+        <tr>
+            <td style="color: red; font-weight: bold; font-size: 20px;">Profit: </td>
+            <td><input type="text" id="profit" style="color: red;"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="compoundInterest()">Display</button></td>            
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function compoundInterest() {
+        let deposit = +document.getElementById("deposit").value;
+        let interest = +document.getElementById("interest").value;
+        let month = +document.getElementById("month").value;
+        let profit = +document.getElementById("profit").value;
+        for (let i = 1; i <= month; i++) {
+            profit = (deposit * interest / 100);
+            deposit += profit;
+        }
+        document.getElementById("profit").value = deposit;
+    }
+</script>
