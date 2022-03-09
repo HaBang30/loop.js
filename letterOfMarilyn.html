@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Of Marilyn</title>
+</head>
+<body>
+    <p id="display" style="color: red;"></p>
+</body>
+</html>
+<script>
+    let person = prompt("Enter name of person get letter:")
+    let address = prompt(" Enter address of person get letter:")
+    let time = prompt(" Enter time person sent a letter:")
+    let content = prompt("Enter content of letter: ");
+        if (person && address && time) {
+            document.getElementById("display").innerHTML = content;
+        }else {
+            alert ("please fill all field");
+        }
+   
+</script>
