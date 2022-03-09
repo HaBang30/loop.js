@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Advanced</title>
+    <style>
+        table {
+            margin: auto;
+            border: 3px solid red;
+            background: pink;
+        }
+        button {
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="4"><input type="text" id="inputNumber" style="width: 200px; height: 30px;"></th>
+        </tr>
+        <tr>
+            <th><button onclick="setInput('(')">(</button></th>
+            <th><button onclick="setInput(')')">)</button></th>
+            <th><button onclick="undoInput()">DEL</button></th>
+            <th><button onclick="clearInput()">AC</button></th>
+        </tr>
+        <tr>
+            <td><button onclick="setInput(7)">7</button></td>
+            <td><button onclick="setInput(8)">8</button></td>
+            <td><button onclick="setInput(9)">9</button></td>
+            <td><button onclick="setInput('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="setInput(4)">4</button></td>
+            <td><button onclick="setInput(5)">5</button></td>
+            <td><button onclick="setInput(6)">6</button></td>
+            <td><button onclick="setInput('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="setInput(1)">1</button></td>
+            <td><button onclick="setInput(2)">2</button></td>
+            <td><button onclick="setInput(3)">3</button></td>
+            <td><button onclick="setInput('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="setInput(0)">0</button></td>
+            <td><button onclick="setInput('.')">.</button></td>
+            <td><button onclick="equal()">=</button></td>
+            <td><button onclick="setInput('+')">+</button></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function setInput(number) {
+        let inputNumber = document.getElementById("inputNumber").value += number;
+    
+    }
+    function equal() {
+        let inputNumber = document.getElementById("inputNumber").value;
+        result = eval(inputNumber);
+        document.getElementById("inputNumber").value = result;
+    }
+    function clearInput() {
+        document.getElementById("inputNumber").value = " ";
+    }
+    function undoInput() {
+       let inputNumber = document.getElementById("inputNumber").value;
+           undo = inputNumber.substring(0, inputNumber.length - 1);
+           document.getElementById("inputNumber").value = undo;
+    }
+</script>
