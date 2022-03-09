@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th style="text-align: left; font-size: 30px;">Calculator</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="input1" style="border: 2px solid red; background: yellow;">
+                <input type="text" id="input2" style="border: 2px solid yellow; background: red;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="addition()">Addition(+)</button>
+                <button onclick="subtraction()">Subtraction(-)</button>
+                <button onclick="multiplication()">Multiplication(x)</button>
+                <button onclick="division()">Division(/)</button>
+            </td>
+        </tr>
+        <tr>
+            <td><p id="result" style="color: red; font-weight: bold;"></p></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
+<script>
+    function addition() {
+        let input1 = +document.getElementById("input1").value;
+        let input2 = +document.getElementById("input2").value;
+        let resultAdd = input1 + input2;       
+            document.getElementById("result").innerHTML = "Result Addition is: " + resultAdd;
+    }
+     function subtraction() {
+        let input1 = +document.getElementById("input1").value;
+        let input2 = +document.getElementById("input2").value;
+        let resultSub = input1 - input2;
+            document.getElementById("result").innerHTML = "Result Subtraction is: " + resultSub;
+    }
+    function multiplication() {
+        let input1 = +document.getElementById("input1").value;
+        let input2 = +document.getElementById("input2").value;
+        let resultMultip = input1 * input2;
+            document.getElementById("result").innerHTML = "Result Multiplication is: " + resultMultip;
+    }
+    function division() {
+        let input1 = +document.getElementById("input1").value;
+        let input2 = +document.getElementById("input2").value;
+        let resultDiv = input1 / input2;
+            document.getElementById("result").innerHTML = "Result Division is: " + resultDiv;
+    }
+</script>
