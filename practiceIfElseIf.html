@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice If Else If</title>
+</head>
+<body>
+   <p id="result" style="font-size: 30px; color: red;"></p>
+</body>
+</html>
+<script>
+
+    
+        let input = prompt("Enter the userName: ");
+            if (input == "Admin") {
+                let password = prompt("Enter the userpassword: ");    
+                if (password == "TheMaster") {
+                    document.getElementById("result").innerHTML = "Welcome";
+                }else if (password == "null") {
+                    document.getElementById("result").innerHTML = "Canceld";
+                }else {
+                    document.getElementById("result").innerHTML = "Wrong password";
+                }        
+            }else if (input == "null") {
+                document.getElementById("result").innerHTML = "canceld";
+            } else {
+                document.getElementById("result").innerHTML = "I don't know you"
+            }            
+</script>
