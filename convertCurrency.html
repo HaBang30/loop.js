@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Currency</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <select name="" id="from">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+        <option value="JPY">JPY</option>
+    </select>
+    <select name="" id="to">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+        <option value="JPY">JPY</option>
+    </select>
+    <button onclick="convert()">convert</button>
+    <br>
+    <br>
+    <div id="result" style="color: red;"></div>
+</body>
+</html>
+<script>
+    function convert() {
+        let input = document.getElementById("input").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let result = document.getElementById("result");
+        if (from == "USD" && to == "VND") {
+            result = input * 23000;
+        } else if (from == "USD" && to == "JPY") {
+            result = input * 115;
+        } else if (from == "VND" && to == "USD"){
+            result = input/23000;
+        }else if (from == "JPY" && to == "USD"){
+            result = input/115;
+        } else if (from == "JPY" && to == "VND"){
+            result = input * 200000;
+        }else if (from == "VND" && to == "JPY"){
+            result = input/200000;
+        }else {
+            result = input;
+        }
+
+        document.getElementById("result").innerHTML = "RESULT: " + "<h1>" + result;
+    }
+</script>
