@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Mass Index</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let weight = parseFloat(prompt ("Mời bạn nhập cân nặng nè: "));
+    let height = parseFloat(prompt ("Mời bạn nhập chiều cao nè: "));
+        let BMI = weight / (height * height);
+            if (BMI < "16") {
+                alert ("Bạn yêu gầy độ 3 nhé, ăn nhiều hơn xíu")
+            } else if (BMI >= "16" && BMI < "17" ) {
+                alert ("Bạn yêu gầy độ 2 nhé, ăn nhiều nhiều xíu")
+            }else if (BMI >= "17" && BMI < "18.5" ) {
+                alert ("Bạn yêu gầy độ 1 nhé, ăn nhiều xíu nha pé")
+            }else if (BMI >= "18.5" && BMI < "25" ) {
+                alert ("body bạn bình thường nha")
+            }else if (BMI >= "25" && BMI < "30" ) {
+                alert ("Bạn yêu thừa cân nha, thể dục mỗi ngày nhé bạn")
+            }else if (BMI >= "30" && BMI < "35" ) {
+                alert ("Béo phì độ 1 rồi bạn ơi, ăn ít, thể dục hàng ngày")
+            }else if (BMI >= "35" && BMI < "40" ) {
+                alert ("Béo phì độ 2 rồi bạn ơi, ăn ít, thể dục nhiều nha bạn")
+            }else {
+                alert ("Béo phì độ 3 rồi bạn ơi, không thể dục hàng ngày là coi chừng nhập viện")
+            }
+</script>
