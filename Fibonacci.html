@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /*
+    let number = parseInt(prompt("Enter the number of terms: "));
+    let n1 = 1;
+    let n2 = 2;
+    let nextTerm = "";
+    for (let i = 1; i <= number; i++){
+        console.log(n1);
+        
+        n1 = n2;
+        n2 = nextTerm;
+    }
+    */
+
+    let number = parseInt(prompt("Enter a positive number: "));
+    let n1 = 1, n2 = 2, nextTerm;
+    console.log('Fibonacci series: ');
+    console.log(n1);
+    console.log(n2);
+    nextTerm = n1 + n2;
+    while (nextTerm <= number) {
+        console.log (nextTerm);
+        n1 = n2;
+        n2 = nextTerm;
+        nextTerm = n1 + n2;
+    }
+    
+  
+</script>
