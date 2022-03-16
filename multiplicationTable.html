@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let html ="";
+        html += "<table border ='1' width ='900' cellspacing = '0' cellpadding = '3'>"
+        for (let j = 1; j <= 10; j++) {
+            html += "<tr>";
+                for (let i = 2; i <= 9; i++) {
+                    html += "<td>" + i + " x " + j + " = " + i*j + "</td>";
+                }
+            html += "</tr>";    
+        }
+        html += "</table>";
+        document.write(html); 
+</script>
