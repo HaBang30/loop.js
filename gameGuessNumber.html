@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Guess Number</title>
+</head>
+<body>
+    <button onclick="play()">PLAY</button>
+</body>
+</html>
+<script>
+    function play() {
+        let maxNumber = + prompt("Enter a number that you want guess: ");
+        let randomNumber = Math.floor(Math.random() * maxNumber);
+        console.log(randomNumber); 
+        let i = 1;
+        while(i <= 3) {
+            let j = +prompt ("Enter you must guess is: ");
+            if (j == randomNumber) {
+                alert ("Congratulation and finished: ");
+                break;
+            } else {
+                alert ("Please choose again");
+                i++;
+            }if (i > 3) {
+                    alert ("Select no more than 3 times");
+                    break;
+                }   
+            }
+    }
+</script>
