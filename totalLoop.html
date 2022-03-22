@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Synthetic Loop</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+/*     
+    // Task 1: print numberString from 1 to 99
+    let i = 1;
+    while (i <= 100) {
+        document.write(i);
+        if (i == 99) {
+            document.write("<br>" + "you finished");
+            break;
+        }
+        i++;
+    }
+   
+
+    // Task 2: increase and decrease temperature
+    let temperature = +prompt ("Please enter the current temperature: ");
+        if (temperature > 100) {
+            alert ("decrease temperature");
+        } else if (temperature < 20) {
+            alert ("increase temperature");
+        } else {
+            alert ("temperature is good")
+        }
+
+
+    // Task 3: display 20 firstnumber in fibonacci
+    let n = +prompt ("Enter a number: ")
+    let a, b, result;
+    a = 0;
+    b = 1;
+    result = b; 
+    for (let i = 1; i <= n; i++) {
+        document.write(result + "------"+ "index"+" "+ i + "<br/>");
+        a = b;
+        b = result;
+        result = a + b;
+    }
+
+
+    //Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+    // Task 4: Find first number in fibonacci string divide all 5:
+    let n = +prompt ("Enter a number: ")
+    let a, b, result;
+    a = 0;
+    b = 1;
+    result = 1;
+    for (let i = 1; i <= n; i++) {
+        if (result % 5 == 0) {
+            document.write(result + " is the first number divides all 5 in " + n + " first number of fibonacci chain": );
+            break;
+        }
+        a = b;
+        b = result;
+        result = a + b;
+    }
+
+
+    // Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci:
+    // Task 5: Calculate total of 20 the first number in fibonacci chain:
+    let n = +prompt ("Enter a number: ")
+    let a, b, result;
+    let total = 0;
+    a = 0;
+    b = 1;
+    result = b; 
+    for (let i = 1; i <= n; i++) {
+        document.write(result + "------"+ "index"+" "+ i + "<br/>");
+        total += result;
+        a = b;
+        b = result;
+        result = a + b;
+    }
+    document.write ("<br/>");
+    document.write ("Total is " + total);
+
+
+
+    // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+    // Task 6: Calculate total of 30 the first number divides all 7 in natural number chain:
+    let n = +prompt ("Enter a number: ")
+    let result = 0;
+    for (let i = 1; i <= n; i++) {
+        if (result % 7 == 0) {
+            document.write(result +".........." + i + " <br/>");
+        }
+        result += 7; 
+    }
+
+*/
+
+    // Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. 
+    // Nhưng nếu số chia hết cho 3 thì in ra “Fizz”, 5 thì in ra “Buzz” thay vì in ra số đó. 
+    // Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ “FizzBuzz”.
+    let b = 1;
+    for (let i = 1; i <= 100; i++) {
+        if (b % 3 == 0 && b % 5 == 0) {
+            document.write ("FizzBuzz" + "<br/>");
+        } else if (b % 5 == 0) {
+            document.write ("Buzz" + "<br/>");
+        } else if (b % 3 == 0) {
+            document.write (" Fizz" + "<br/>");
+        } else {
+            document.write(b + "<br/>");
+        }
+        b++;
+    }
+
+</script>
