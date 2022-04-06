@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Of Caro</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        tr, td {
+            border: 1px solid red;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        button {
+            width: 120px;
+            height: 50px;
+            margin-left: 20px;
+            border: 1px solid red;
+            background-color: pink;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        button:hover {
+            color: blue;
+            border: 1px solid blue;
+        }
+        p {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="start()">Bắt đầu</button>
+    <button onclick="reset()">Làm mới</button>
+    <button onclick="undo()">Lùi lại</button>
+    <table id="game-board">
+
+    </table>
+    <p>Điểm:</p>  
+    <p id="player1">Player 1: 0</p>
+    <p id="player2">Player 2: 0</p>
+</body>
+</html>
+<script>
+    const CELLS = 10;
+    const COLUMNS = 10;
+    let arr = [];
+    let player = 1;
+    let positionCurrent = [];
+    let isGameOver = false;
+
+    let scorePlayer1 = 0;
+    let scorePlayer2 = 0;
+
+    function start() {
+        drawGame(arr);
+    }
+
+    function drawGame(arr){
+        let html = " ";
+        html += `<table>`
+        for (let i = 0; i < CELLS; i++) {
+            arr[i] = [];
+            html += `<tr>`;
+                for (let j = 0; j < COLUMNS; j++) {
+                    arr[i][j] = '*';
+                    html += `<td id = "cell-${i}-${j}" onclick="play(${i}, ${j})"></td>`;
+                }
+                html += `</tr>`;
+        }
+        html += `</table>`;
+        document.getElementById("game-board").innerHTML = html;
+    }
+
+    function play (i, j) {
+        if (!isGameOver && arr[i][j] == '*') {
+            positionCurrent.push([i][j]);
+            let input = document.getElementById(`cell-${i}-${j}`);
+            if (player == 2) {
+                input.innerHTML = "X";
+                input.style.color = 'blue';
+                arr[i][j] = "X";
+                player = 1;
+            } else {
+                input.innerHTML = "O";
+                input.style.color = 'red';
+                arr[i][j] = "O";
+                player = 2;
+            }
+            checkWin(i, j);
+        }
+    }
+
+    function undo(i, j) {
+        if (!isGameOver){
+           // take last position of i and j:
+           let i = positionCurrent[positionCurrent.length - 1][0];
+           let j = positionCurrent[positionCurrent.length - 1][1];
+           // use pop to delete last element:
+           positionCurrent.pop();
+           arr[i][j] = '*';
+           document.getElementById(`cell-${i}-${j}`).innerHTML = " ";
+           if ( player == 1) {
+               player = 2;
+           }else {
+               player = 1;
+           }
+        } 
+    }
+      
+
+    function reset() {
+        arr = [];
+        drawGame(arr);
+        isGameOver = false;
+    }
+
+
+    function checkWin(i, j){
+        gameOver(equalDiagonal(i,j));
+        gameOver(alongDiagonal(i,j));
+        gameOver(downDiagonal(i,j));
+        gameOver(againstDiagonal(i,j));
+    }
+
+    function equalDiagonal(i,j) {
+        let x = 1;
+        var count = 1;
+        while (j - x  >= 0 && arr[i][j - x] == arr[i][j]) {
+            count++;
+            x++;
+        }
+        let y = 1;
+        while (j + y < CELLS && arr[i][j + y] == arr[i][j]) {
+            count++;
+            y++;
+
+        }
+        return count;
+    }
+
+    function alongDiagonal(i,j) {
+        let x = 1;
+        let count = 1;
+        while (i - x >= 0 && arr[i - x][j] == arr[i][j]) {
+            count++;
+            x++;
+        }
+        let y = 1;
+        while (i + y < COLUMNS && arr[i + y][j] == arr[i][j]) {
+            count++;
+            y++;
+        }
+        return count;
+    }
+
+    function downDiagonal(i,j) {
+        let x = 1;
+        var count = 1;
+        while (i - x  >= 0 && j - x  >= 0 && arr[i - x][j - x] == arr[i][j]) {
+            count++;
+            x++;
+        }
+        let y = 1;
+        while (i + y < CELLS && j + y < COLUMNS && arr[i + y][j + y] == arr[i][j]) {
+            count++;
+            y++;
+
+        }
+        return count;
+
+    }
+
+    function againstDiagonal(i,j) {
+        let x = 1;
+        let count = 1;
+        while (i + x < COLUMNS && j - x >= 0 && arr[i + x][j - x] == arr[i][j]) {
+            count++;
+            x++;
+        }
+        let y = 1;
+        while (i - y >= 0 && j + y < CELLS && arr[i - y][j + y] == arr[i][j]) {
+            count++;
+            y++;
+        }
+        return count;
+    }
+
+    function gameOver(count) {
+        if (count == 5) {
+            let player1 = document.getElementById("player1");
+            let player2 = document.getElementById("player2");
+            isGameOver = true;
+            alert (`Player ${player} chiến thắng, chúc mừng bạn đã nhận được 20 điểm`);
+            if (player == 1) {
+                scorePlayer1 += 20;
+                player1.innerHTML = `Player ${player}: ${scorePlayer1}`
+               
+            } else {
+                scorePlayer2 += 20;
+                player2.innerHTML = `Player ${player}: ${scorePlayer2}`
+             
+            }
+        }
+
+    }
+
+</script>
