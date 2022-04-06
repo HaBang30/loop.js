@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Value Max In The Array</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+/*
+    let array = [-1, 3, 5, 14, 10, 12];
+    let max = array[0];
+    console.log(max);
+    let index;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+            index = i;
+        }
+    }
+    alert("Max: " + max + " at position " + index);
+   
+
+
+    let array = [3,19,15,14,12];
+    let max = array[0];
+    let index;
+    for (let i = 0; i < array.length; i++){
+        if (array[i] > max ) {
+            max = array[i];
+            index = i;
+            alert (" Max: " + max + " at position " + index);
+        }
+        
+    }
+        
+
+let arr = [0,4,6,7,9,11];
+    let min = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    document.write(min)
+
+
+function findMin(arr) {
+    let min = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+    let numbers =[];
+    for (let i = 0; i < 100; i++) {
+        numbers[i] = Math.floor(Math.random() * 100);
+    }
+    let minValue = findMin(numbers);
+    document.write("<br/>");
+    document.write("The minimum value is: " + minValue);
+
+*/
+    function findMax(arr) {
+    let max = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+    let numbers =[];
+    for (let i = 0; i < 100; i++) {
+        numbers[i] = Math.floor(Math.random() * 100);
+    }
+    let maxValue = findMax(numbers);
+    document.write("<br/>");
+    document.write("The Maximum value is: " + maxValue);
+
+</script>
