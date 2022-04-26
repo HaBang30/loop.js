@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create class and object of rectangle </title>
+</head>
+<body>
+    <canvas id="canvas" width="350" height="200" style="border: 2px solid blue;"></canvas>
+</body>
+</html>
+<script>
+    class Rectangle {
+        constructor(width, height, color){
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+        getArea() {
+            return this.width * this.height;
+        }
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+        drawRectangle() {
+            let canvas = document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+                context.beginPath();
+                context.fillStyle = this.color;
+                context.lineJoin = "round";
+                context.fillRect(80, 50, this.width, this.height);
+                context.fill();   
+        }
+    }
+    let rect1 = new Rectangle(200, 100, "red");
+    
+    rect1.drawRectangle();
+    document.write("<br/>");
+    document.write("Area is: " + rect1.getArea());
+    document.write("<br/>")
+    document.write("Perimeter is: " + rect1.getPerimeter());
+
+    
+</script>
