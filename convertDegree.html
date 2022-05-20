@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Degree</title>
+    <style>
+        div {
+            color: red;
+            font-weight: bold;
+        }
+        div:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input">
+    <select name="" id="from">
+        <option value="degreeC">degreeC</option>
+        <option value="degreeF">degreeF</option>
+    </select>
+    <select name="" id="to">
+        <option value="degreeC">degreeC</option>
+        <option value="degreeF">degreeF</option>
+    </select>
+    <Button onclick="convert()">convert</Button>
+    <hr style="width: 30.5%; margin-left: 0px;">
+    <br>
+    <div id="result"></div>
+</body>
+<script>
+    function convert() {
+        let input = document.getElementById ("input").value;
+        let from = document.getElementById ("from").value;
+        let to = document.getElementById ("to").value;
+        let result = document.getElementById("result");
+        if (from == "degreeC" && to == "degreeF"){
+            result = (9*input)/5 + 32;
+        } else if (from == "degreeF" && to == "degreeC"){
+            result = ((input - 32)*5)/9;
+        }else {
+            result = input;
+        }
+        document.getElementById("result").innerHTML = "Result: " + result;
+        
+    }
+</script>
+</html>
