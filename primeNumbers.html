@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check numbers of prime</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+/*
+    // Method 1:
+    let n;
+    do {
+        n = prompt ("Input a number to check: ");
+        if (!isNaN(n)){
+            break;
+        }else {
+            alert ("You need input a number! Please try again");
+        }
+
+    }while (isNaN(n));
+
+    function check_prime(n) {
+        let flag = true;
+        if (n < 2) {
+           flag = false;
+        } else {
+           for (let i = 2; i < n; i++) {
+               if (n % i == 0){
+                   flag = false;
+                   break;
+               } else {
+                   flag = true;
+               }
+           }
+        }
+        if (flag == true) {
+           document.write (n + " is prime number");
+        } else {
+        document.write (n + " is not  prime number");
+        }
+    }
+    check_prime(n)
+
+    */
+
+    
+    // Method 2:
+    let n;
+    do {
+        n = prompt ("Input a number to check: ");
+        if (!isNaN(n)){
+            break;
+        }else {
+            alert ("You need input a number! Please try again");
+        }
+
+    }while (isNaN(n));
+
+    function check_prime(n) {
+        let flag = true;
+        if (n < 2) {
+            flag = false;
+        } else if(n==2) {
+            flag = true;
+        } else if (n % 2 == 0) {
+            flag = false;
+        } else {
+            for (let i = 3; i < n -1; i += 2) {
+                if (n % i == 0){
+                    flag = false;
+                    break;
+                } else {
+                    flag = true;
+                }
+           }
+        }
+        if (flag == true) {
+           document.write (n + " is prime number");
+        } else {
+        document.write (n + " is not  prime number");
+        }
+    }
+    check_prime(n)
+
+
+
+</script>
