@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get date</title>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
+<script>
+    class Date {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        getDay() {
+            return this.day;
+        }
+        getMonth() {
+            return this.month;
+        }
+        getYear() {
+            return this.year;
+        }
+        setDay(day) {
+            return this.day = day
+        }
+        setMonth(month) {
+            return this.month = month
+        }
+        setYear(year) {
+            return this.year = year
+        }
+        setDate(day, month, year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        toString(){
+            return "Day: " + this.day + ", month " +this.month + ", year " + this.year;
+        }
+        
+    }
+   
+    let date = new Date(25, 4, 2022);
+    let day = date.getDay(); // 25
+    date.setMonth(5);
+    let month = date.getMonth(); // 4
+    let year = date.getYear(); // 2022
+    alert(day + "/" + month + "/" + year);
+    
+    console.log(date.toString());
+    
+</script>
