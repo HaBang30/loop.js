@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> class of temperature </title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Temperature {
+        constructor(degreeC){
+            this.degreeC = degreeC;  
+        }
+        convertCToF() {
+            let degreeF = (this.degreeC * 1.8) + 32;
+            return degreeF;
+        }
+        convertCToK() {
+            let degreeK = this.degreeC + 273.15;
+            return degreeK;
+        }
+    }
+
+    let deg = new Temperature(25);
+    document.write(deg.convertCToF() + "<br/>");
+    document.write(deg.convertCToK());
+
+</script>br
